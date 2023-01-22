@@ -20,7 +20,7 @@ Clone the project and access the folder.
 
 ```bash
 $ git clone https://github.com/vagnermaltauro/Habits.git
-$ cd Project-NLW
+$ cd Habits
 ```
 
 Follow the steps below:
