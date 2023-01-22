@@ -49,7 +49,5 @@ $ npm run dev
 
 ### to access the prisma
 
-```bash
 $ cd server
 $ npx prisma studio
-```
