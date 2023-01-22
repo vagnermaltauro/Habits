@@ -33,7 +33,7 @@ $ cd web
 $ npm install
 
 # Start the web project
-$ npm start
+$ npm run dev
 ```
 
 ### Server
