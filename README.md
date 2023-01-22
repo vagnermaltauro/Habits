@@ -19,8 +19,8 @@ This project was developed using the following technologies:
 Clone the project and access the folder.
 
 ```bash
-$ git clone https://github.com/vagnermaltauro/habits.git
-$ cd nlw-setup-ignite
+$ git clone https://github.com/vagnermaltauro/Habits.git
+$ cd Project-NLW
 ```
 
 Follow the steps below:
