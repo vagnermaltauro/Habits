@@ -2,7 +2,7 @@ import React from 'react';
 import { generateDatesFromYearBeginning } from '../utils/generate-dates-from-year-beginning';
 import { HabitDay } from './HabitDay';
 
-const weekDays = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'];
+const weekDays = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
 const summaryDates = generateDatesFromYearBeginning();
 

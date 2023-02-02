@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-checkbox": "^1.0.1",
     "@radix-ui/react-popover": "^1.0.3",
     "@tailwindcss/typography": "^0.5.9",
     "clsx": "^1.2.1",
