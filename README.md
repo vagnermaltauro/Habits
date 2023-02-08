@@ -47,7 +47,8 @@ $ cd server
 $ npm install
 
 # Start the server project
-$ npx prisma migrate deploy
+$ npx prisma migrate dev
+$ npx prisma db seed
 $ npm run dev
 
 ### to access the prisma
