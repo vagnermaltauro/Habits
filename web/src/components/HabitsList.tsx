@@ -6,6 +6,7 @@ import dayjs from 'dayjs';
 
 interface HabitsListProps {
   date: Date;
+  onCompletedChanged: (completed: number) => void
 }
 
 interface HabitsInfo {
@@ -17,7 +18,7 @@ interface HabitsInfo {
   completedHabits: string[]
 }
 
-export function HabitsList({ date }: HabitsListProps) {
+export function HabitsList({ date, onCompletedChanged }: HabitsListProps) {
   const [habitsInfo, setHabitsInfo] = useState<HabitsInfo>();
   const isDateInPast = dayjs(date).endOf('day').isBefore(new Date());
 
@@ -31,11 +32,32 @@ export function HabitsList({ date }: HabitsListProps) {
     });
   }, []);
 
+  async function handleToggleHabit(habitId: string) {
+    const isHabitAlreadyCompleted = habitsInfo!.completedHabits.includes(habitId);
+    let completedHabits: string[] = [];
+
+    await api.patch(`/habits/${habitId}/toggle`);
+
+    if (isHabitAlreadyCompleted) {
+      completedHabits = habitsInfo!.completedHabits.filter(id => id !== habitId);
+    } else {
+      completedHabits = [...habitsInfo!.completedHabits, habitId];
+    }
+
+    setHabitsInfo({
+      possibleHabits: habitsInfo!.possibleHabits,
+      completedHabits,
+    });
+
+    onCompletedChanged(completedHabits.length);
+  }
+
   return (
     <div className="mt-6 flex flex-col gap-3">
       {habitsInfo?.possibleHabits.map(habit => {
         return (
           <Checkbox.Root
+            onCheckedChange={() => handleToggleHabit(habit.id)}
             key={habit.id}
             checked={habitsInfo.completedHabits.includes(habit.id)}
             disabled={isDateInPast}
