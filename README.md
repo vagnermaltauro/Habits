@@ -1,3 +1,6 @@
+![image](https://user-images.githubusercontent.com/81274178/217659808-a3013d94-74f9-416a-8964-8df6d90fc731.png)
+
+
 # Habit Life 💪
 
 ## 🧪 Technologies
